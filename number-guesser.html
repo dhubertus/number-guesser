@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Number Guesser</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/Users/davehubertus/Desktop/Turing/module-one/number-guesser/number-guesser.css">
+  </head>
+
+  <body>
+
+    <heading>
+      <h1><span class="number">Number</span>Guesser</h1>
+    </heading>
+
+    <section>
+        <input id="input" type="number" maxlength="3" placeholder="Enter Your Guess"/>
+        <button id="guess" class="button" type="submit" name="Guess" >Guess</button>
+        <button id="clr" class="button disable" type="submit" name="Clear">Clear</button>
+    </section>
+
+<!-- Nest spans and pg breaks in para element seperating each for easier readability?? -->
+    <section>
+      <p>
+        <span id="win"> Your last guess was</span>
+        <br />
+        <span id="prevGuess" class="prev-guess"></span>
+        <br />
+        <span id="high-low"></span>
+      </p>
+    </section>
+
+    <section>
+        <button id="reset" class="button reset disable" submit="submit" name="Reset">Reset</button>
+    </section>
+
+    <script type="text/javascript" src="/Users/davehubertus/Desktop/Turing/module-one/number-guesser/number-guesser.js"></script>
+
+  </body>
+
+</html>

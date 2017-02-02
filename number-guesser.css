@@ -1,0 +1,96 @@
+body {
+  text-align: center;
+  margin:0px auto 0px auto;
+  font-family:"open sans", "Bold 700", "Light 300";
+  min-width:320px;
+}
+
+p {
+  font-size:30px;
+  color:#404041;
+}
+
+heading, h1 {
+  margin:0px;
+  height:100px;
+  background-color:#404041;
+  color:rgba(230, 231, 232, 0.7);
+  font-weight:lighter;
+  font-size: 50px;
+  line-height:100px;
+  vertical-align:middle;
+}
+
+.number {
+  color:#ED458B;
+  font-weight:700;
+  margin:0px 20px 0px 0px;
+}
+
+input {
+  display: block;
+  margin:50px auto 25px auto;
+  width:60%;
+  height:30px;
+  text-align:center;
+}
+
+.prev-guess {
+  display:block;
+  height:200px;
+  line-height:200px;
+  font-size:150px;
+  color:#EB008B;
+}
+
+.button {
+  background:none;
+  border:none;
+  font-size:1em;
+  color:#ffffff;
+  background-color:#929497;
+  margin:0% 2%;
+  height:40px;
+  width:28%;
+  border-radius:30px;
+}
+
+.button.reset {
+  margin:30px;
+  width:60%;
+}
+
+.button:hover {
+  background-color:#EB008B;
+}
+
+.disable {
+  cursor:not-allowed;;
+  pointer-events:none;
+  background-color:#D0D2D3;
+}
+
+
+/* Media query items */
+/* NOTE site must look good through ~320 px. On button stack input & buttons same size*/
+
+@media screen and (max-width:400px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  input {
+    width:90%;
+  }
+
+  .button {
+    display: block;
+    width: 90%;
+    margin:10px auto;
+  }
+
+  .button.reset {
+    margin:5px auto;
+    width:90%;
+  }
+}
