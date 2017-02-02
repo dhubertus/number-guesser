@@ -9,12 +9,16 @@ var hiLo = document.getElementById("high-low");
 var win = document.getElementById("win");
 var min = document.getElementById("min");
 var max = document.getElementById("max");
-var randomNumb = numberGen(1, 100);
-var minVal = 1;
-var maxVal = 100;
+var randomNumb = numberGen(minVal, maxVal);
+var minVal;
+var maxVal;
 
+window.onLoad = function() {
+  minVal = 1;
+  maxVal = 100;
+  numberGen(minVal, maxVal);
 /* For programming reference */
-
+}
 
 /* rand num 1 - 100 */
 function numberGen (min,max) {
