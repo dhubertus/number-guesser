@@ -1,5 +1,5 @@
 
-/* NOTE global variables run at page start. However I have seen cases where the input still works. Maybe bc of keyup??? */
+/* NOTE global variables run at page start. However I have seen cases where the input still works */
 
 var recBtn = document.getElementById("guess");
 var prevGuess = document.getElementById("prevGuess");
@@ -9,23 +9,32 @@ var hiLo = document.getElementById("high-low");
 var win = document.getElementById("win");
 var min = document.getElementById("min");
 var max = document.getElementById("max");
-var randomNumb = numberGen();
-
+var randomNumb = numberGen(1, 100);
+var minVal = 1;
+var maxVal = 100;
 
 /* For programming reference */
-console.log(randomNumb);
 
 
 /* rand num 1 - 100 */
-function numberGen () {
-  return (Math.ceil(Math.random() * 100));
+function numberGen (min,max) {
+  randomNumb = (Math.floor(Math.random() * (max - min +1)) + min);
+  console.log(randomNumb)
 }
 
-/* Attempt to replace aggressive variable quantity with functions */
-function hiLo (words) {
-  var hiLo = document.getElementById("high-low");
-  hiLo.innerText = words;
-}
+min.addEventListener("keyup", function() {
+  minVal = min.value;
+  minVal = parseInt(minVal, 10)
+  numberGen(minVal, maxVal)
+})
+
+max.addEventListener("keyup", function() {
+  maxVal = max.value;
+  maxVal = parseInt(maxVal, 10)
+  numberGen(minVal, maxVal)
+})
+
+
 
 /* Recieve Button return previous guess items */
 /* Recieve Button enable disable responsibilities*/
@@ -48,10 +57,10 @@ recBtn.addEventListener ("click", function highLowWin() {
   if (isNaN(input)) {
     return win.innerText = "That is not a number!";
       hiLo.innerText = "";
-  } if (input > 100) {
-      win.innerText = "You have guessed greater than the upper limit of 100!";
-  } else if (input < 1) {
-      win.innerText = "You have guessed less than the lower limit of 1!";
+  } if (input > maxVal) {
+      win.innerText = "You have guessed greater than the upper limit!";
+  } else if (input < minVal) {
+      win.innerText = "You have guessed less than the lower limit!";
   } else if (input < randomNumb) {
       win.innerText = "Your last guess was";
       hiLo.innerText = "That was too LOW";
@@ -96,8 +105,6 @@ resetBtn.addEventListener("click", function() {
       clearBtn.classList.add("disable");
       resetBtn.classList.add("disable");
       resetBtn.innerText = "Reset";
-      randomNumb = numberGen();
+      randomNumb = numberGen(minVal, maxVal);
       console.log(randomNumb);
 })
-
-/* Possible replacement functions */
