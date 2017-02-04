@@ -5,6 +5,7 @@
     <title>Number Guesser</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="/Users/davehubertus/Desktop/Turing/module-one/number-guesser/number-guesser.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
   </head>
 
   <body>
@@ -13,29 +14,26 @@
       <h1><span class="number">Number</span>Guesser</h1>
     </heading>
 
+<!-- Section 1 Input/Button Items -->
     <section>
         <input id="input" type="number" maxlength="3" placeholder="Enter Your Guess"/>
-        <input id="min" class="min" type="number" placeholder="Enter Your Min Range"/>
-        <input id="max" class="max" type="number" placeholder="Enter Your Max Range"/>
         <button id="guess" class="button" type="submit" name="Guess" >Guess</button>
         <button id="clr" class="button disable" type="submit" name="Clear">Clear</button>
     </section>
 
-<!-- Nest spans and pg breaks in para element seperating each for easier readability?? -->
+<!-- Section 2 -->
     <section>
-      <p>
-        <span id="win"> Your last guess was</span>
-        <br />
-        <span id="prevGuess" class="prev-guess"></span>
-        <br />
-        <span id="high-low"></span>
-      </p>
+        <p id="win">Your last guess was</p>
+        <p id="prev-guess" class="prev-guess"></p>
+        <p id="high-low"></p>
     </section>
 
+<!-- Section 3 Only Button Items-->
     <section>
         <button id="reset" class="button reset disable" submit="submit" name="Reset">Reset</button>
     </section>
 
+<!-- JS File Path -->
     <script type="text/javascript" src="/Users/davehubertus/Desktop/Turing/module-one/number-guesser/number-guesser.js"></script>
 
   </body>

@@ -1,34 +1,21 @@
 
-/* NOTE global variables run at page start. However I have seen cases where the input still works. Maybe bc of keyup??? */
-
 var recBtn = document.getElementById("guess");
-var prevGuess = document.getElementById("prevGuess");
+var prevGuess = document.getElementById("prev-guess");
 var clearBtn = document.getElementById("clr");
 var resetBtn = document.getElementById("reset");
 var hiLo = document.getElementById("high-low");
 var win = document.getElementById("win");
-var min = document.getElementById("min");
-var max = document.getElementById("max");
 var randomNumb = numberGen();
 
 
-/* For programming reference */
-console.log(randomNumb);
-
-
-/* rand num 1 - 100 */
+/* Random Number Generator (1 - 100) */
 function numberGen () {
   return (Math.ceil(Math.random() * 100));
 }
 
-/* Attempt to replace aggressive variable quantity with functions */
-function hiLo (words) {
-  var hiLo = document.getElementById("high-low");
-  hiLo.innerText = words;
-}
 
-/* Recieve Button return previous guess items */
-/* Recieve Button enable disable responsibilities*/
+/* Recieve Button (return previous guess items) */
+
 recBtn.addEventListener ("click", function() {
   var recInput = document.getElementById("input");
   var input = recInput.value;
@@ -36,9 +23,7 @@ recBtn.addEventListener ("click", function() {
 })
 
 
-/* Recieve Button return NaN/hi/low/boom items*/
-/*NOTE parse is not used bc it is not recognizing #letter combos. Also direct input is not viewed as string, why??*/
-/* Switched input type to number to avoid possible #lettercombo */
+/* Recieve Button (return NaN/hi/low/boom items) */
 
 recBtn.addEventListener ("click", function highLowWin() {
   var recInput = document.getElementById("input");
@@ -48,10 +33,12 @@ recBtn.addEventListener ("click", function highLowWin() {
   if (isNaN(input)) {
     return win.innerText = "That is not a number!";
       hiLo.innerText = "";
-  } if (input > 100) {
+  } else if (input > 100) {
       win.innerText = "You have guessed greater than the upper limit of 100!";
+      hiLo.innerText = "";
   } else if (input < 1) {
       win.innerText = "You have guessed less than the lower limit of 1!";
+      hiLo.innerText = "";
   } else if (input < randomNumb) {
       win.innerText = "Your last guess was";
       hiLo.innerText = "That was too LOW";
@@ -68,7 +55,7 @@ recBtn.addEventListener ("click", function highLowWin() {
   })
 
 
-/* Recieve button enable/disable responsibilities */
+/* Recieve button (enable/disable responsibilities) */
 
 recBtn.addEventListener ("click", function () {
   clearBtn.classList.remove("disable");
@@ -97,7 +84,4 @@ resetBtn.addEventListener("click", function() {
       resetBtn.classList.add("disable");
       resetBtn.innerText = "Reset";
       randomNumb = numberGen();
-      console.log(randomNumb);
 })
-
-/* Possible replacement functions */

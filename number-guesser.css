@@ -1,21 +1,16 @@
 body {
   text-align: center;
   margin:0px auto 0px auto;
-  font-family:"open sans", "Bold 700", "Light 300";
-  min-width:320px;
+  font-family: 'Open Sans', sans-serif;
 }
 
-p {
-  font-size:30px;
-  color:#404041;
-}
-
-heading, h1 {
+/* Heading Items */
+h1 {
   margin:0px;
   height:100px;
   background-color:#404041;
-  color:rgba(230, 231, 232, 0.7);
-  font-weight:lighter;
+  color:#E6E7E8;
+  font-weight:300;
   font-size: 50px;
   line-height:100px;
   vertical-align:middle;
@@ -27,6 +22,7 @@ heading, h1 {
   margin:0px 20px 0px 0px;
 }
 
+/* Section 1 Items */
 input {
   display: block;
   margin:50px auto 25px auto;
@@ -35,19 +31,22 @@ input {
   text-align:center;
 }
 
-.min, .max {
-  width:40%;
-  margin:20px auto;
+/* Section 2 Items */
+p {
+  font-size:30px;
+  color:#404041;
 }
 
 .prev-guess {
   display:block;
   height:200px;
   line-height:200px;
+  margin: 20px auto;
   font-size:150px;
   color:#EB008B;
 }
 
+/* Button Items */
 .button {
   background:none;
   border:none;
@@ -76,12 +75,14 @@ input {
 }
 
 
-/* Media query items */
-/* NOTE site must look good through ~320 px. On button stack input & buttons same size*/
+/* Media query adjustments */
+@media screen and (max-width:500px) {
+  body {
+    max-height:568px;
+  }
 
-@media screen and (max-width:400px) {
   h1 {
-    font-size: 40px;
+    font-size: 30px;
   }
 
   input {
@@ -90,11 +91,6 @@ input {
 
   p {
     margin:10px 5px;
-  }
-
-  .min, .max {
-    width:50%;
-    margin:20px auto;
   }
 
   .button {
