@@ -78,7 +78,7 @@ p {
 /* Media query adjustments */
 @media screen and (max-width:500px) {
   body {
-    max-height:568px;
+    height:500px;
   }
 
   h1 {
